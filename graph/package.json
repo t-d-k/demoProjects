@@ -1,0 +1,12 @@
+{
+    "name": "graph",
+    "version": "1.0.0",
+    "description": "demonstrates various heuristic algorithms",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "tom kelsey",
+    "license": "UNLICENSED",
+    "type": "module"
+}
