@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>test graph and heuristics</title>
+  <link rel="index.css" rel="stylesheet">
+
+   <!-- <script type ="module" >
+    import {init, redraw} from './testGraph.js';
+   </script>  -->
+   <script src="simAnneal.js" ></script>
+   <script src="hillClimb.js" ></script>
+   <script src="markMaxes.js" ></script>
+   <script src="testGraph.js" ></script>
+   
+</head>
+
+<body>
+  <div class="fnbuttons">
+    <input id="fn1" type="button" value="fn 1" onclick="setObjFn(1);" />
+    <input id="fn2" type="button" value="fn 2" onclick="setObjFn(2);" />
+  </div>
+  <div>
+    <label for="maxXIn">max X</label>
+    <input onchange="updateMaxX()" type="number" id="maxXIn" name="MaxX" required minlength="1" value="45">
+    <label for="minXIn">min X</label>
+    <input onchange="updateMinX()" type="number" id="minXIn" name="MinX" required minlength="1" value="-45">
+
+    <label for="colorIn">Graph Colour</label>
+    <input onchange="updateColour()" type="color" id="colorIn" name="color" value="#0000ff">
+  </div>
+  <div>
+    <button id="drawBtn">Draw</button>
+    <button onclick="doClear()">Clear</button>
+  </div>
+  <div>Objective function = "<span id="fn"></span>"</div>
+  <canvas width="320" height="500">
+    <p>Description of the canvas for those unable to view it.</p>
+  </canvas>
+  <div class="buttons">
+    <input id="hillBtn" type="button" value="Hill Climb" onclick="hillClimb();" />
+    <input id="maxBtn" type="button" value="Find Max" onclick="findMax();" />
+    <input id="simBtn" type="button" value="Simulated Annealing" onclick="simAnneal();" />
+  </div>
+  <div id="info"></div>
+  <script >
+
+    init();
+  </script>
+</body>
+
+</html>
