@@ -1,11 +1,10 @@
-// import { useState } from 'react'
 import { useRef, useState } from 'react';
 import AnswerBlock from './AnswerBlock';
 import './QuestionBlock.css'
 import { decodeHtml } from './Question.js';
 
 /**
- * 
+ * question + answer div
  * @param {callback } onanswered
  * @param {string} correct_answer 
  * @param {string array} answers 

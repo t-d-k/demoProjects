@@ -4,30 +4,32 @@ import Question from './Question';
 
 import QuestionBlock from './QuestionBlock';
 function App() {
-  const [questions, setQuestions] = useState([ ]);
-
+  const [questions, setQuestions] = useState([]);
+  const [numQs, setnumQs] = useState(10);
+  const [updated, setUpdated] = useState(false);
   useEffect(() => {
     //called twice because of strict mode 
     if (questions.length == 0) {
-      readJson();
+      // readJson();
       console.log('questions: ' + questions);
     }
   }, []) // <-- empty dependency array
 
   function readJson() {
-    fetch('https://opentdb.com/api.php?amount=10 ')
+    console.log(`https://opentdb.com/api.php?amount=${numQs}`)
+    fetch(`https://opentdb.com/api.php?amount=${numQs}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("HTTP error " + response.status);
         }
         return response.json();
       })
-      .then(json => {        
+      .then(json => {
         console.log('results: ' + JSON.stringify(json.results));
         setQuestions(json.results);
       })
       .catch(function (err) {
-        console.log('dataError' +err);
+        console.log('dataError' + err);
       })
   }
 
@@ -35,17 +37,30 @@ function App() {
     var lines = [];
     questions.forEach(function (question) {
       lines.push(<QuestionBlock
-         ques={question.question} 
-         answers={question.incorrect_answers}
-         correct_answer={question.correct_answer}
+        ques={question.question}
+        answers={question.incorrect_answers}
+        correct_answer={question.correct_answer}
       />);
     });
 
     return lines;
   }
+
+  function inputChanged(newInput) {
+    setnumQs(newInput);
+  }
+  function updateClicked() {
+    readJson();
+    setUpdated(true);
+  }
   return (
     <div className="App"    >
       <h1>Trivia Site</h1>
+      <div id="options" >
+        <label htmlFor="numq">Number of Questions:</label>
+        <input  disabled={updated?"true":""} id="numq" value={numQs} onInput={e => inputChanged(e.target.value)} />
+        <button disabled={updated?"true":""} onClick={updateClicked} >Update</button>
+      </div>
       <header className="App-header" >
         {getLines()}
       </header>
