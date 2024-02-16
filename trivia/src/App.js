@@ -1,8 +1,10 @@
-// const [profiles, setProfiles] = useState([])
 import { useEffect, useState } from 'react';
-import Question from './Question';
+
 
 import QuestionBlock from './QuestionBlock';
+
+import './App.css';
+
 function App() {
   const [questions, setQuestions] = useState([]);
   const [numQs, setnumQs] = useState(10);
@@ -56,7 +58,7 @@ function App() {
   return (
     <div className="App"    >
       <h1>Trivia Site</h1>
-      <div id="options" >
+      <div id="options" class={updated?"optdisabled":""}>
         <label htmlFor="numq">Number of Questions:</label>
         <input  disabled={updated?"true":""} id="numq" value={numQs} onInput={e => inputChanged(e.target.value)} />
         <button disabled={updated?"true":""} onClick={updateClicked} >Update</button>

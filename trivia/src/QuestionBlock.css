@@ -1,57 +1,67 @@
-
-
-#question, .answer {
+#question,
+.answer {
     border-radius: 5%;
-    color:black;
-    width:90%;
-    height:50%;
-    border:solid 1px darkblue;
-    margin:10px;
+    color: black;
+    width: 90%;
+    height: 50%;
+    border: solid 1px darkblue;
+    margin: 10px;
 }
 
 #question {
     background-color: white;
-  
-    height:50%;
- 
+
+    height: 50%;
+
 }
 
- .answer {
-    height:10%;
+.answer {
+    height: 10%;
     background-color: greenyellow;
-  }
-  .answer:disabled{
-    color:gray;
-  }
+}
+
+.answered .answer {
+    background-color: gray;
+    color:black;
+}
+
+.answer:disabled {
+    background-color: gray;
+}
 
 #age {}
 
 #location {}
 
-.answered, .not-answered{
+.answered,
+.not-answered {
     background-color: lightblue;
     box-shadow: 0 4px 8px blue;
     text-align: center;
     padding: 10;
     border-radius: 10px;
     width: 90%;
-     margin: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row; 
-    flex-grow: 0; flex-shrink: 0;    
-    
-}
-.answered{
-    background-color: gray;
-}
-.questionData{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap; 
     margin: 1em;
-    width:50%;
-    color:blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+}
+
+.answered {
+    background-color: rgba(162, 155, 155, 0.911);
+    box-shadow: none;
+}
+
+.questionData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    margin: 1em;
+    width: 50%;
+    color: blue;
 }
