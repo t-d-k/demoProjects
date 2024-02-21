@@ -1,0 +1,22 @@
+/* colour scheme
+Elegant Black: #000000 - background
+Regal Gold: # ffd700
+Royal Purple: #800080  */
+
+.App {
+  text-align: center;
+  background-color: black;
+}
+
+
+.header,#main {
+  background-color: black;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #ffd700;
+}
+

@@ -1,0 +1,29 @@
+/* colour scheme
+Elegant Black: #000000 - background
+Regal Gold: # ffd700
+Royal Purple: #800080  */
+
+#itemsDiv {
+    flex: 0 0 30%;
+    background-color: #000000;
+    padding:0.5em;
+    margin: 0.5em;
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.btn, .selBtn{
+    margin:0.2em auto;
+    padding:0.2em;
+    flex: 0 0 90%;
+    border-radius: 20px;    
+}
+.selBtn{
+    background-color: #ffd700;
+    color:#800080;
+}
+.btn{
+    color:#ffd700;
+    background-color: #800080;
+}
