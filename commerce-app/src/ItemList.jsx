@@ -8,16 +8,16 @@ import  { itemsList } from './items';
  * @returns 
  */
 function ItemList(params) {
-    const [selTag, setselTag] = useState('');
+    const [selIndex, setselIndex] = useState('');
 
     /**
      * 
      * @param {string} tag name of item selected
      * @param {callback} onSelected callback when selected changed
      */
-    function onButton( tag, onSelected) {
-        setselTag(tag);
-        onSelected(tag);
+    function onButton( index, onSelected) {
+        setselIndex(index);
+        onSelected(index);
     }
     /**
      * 
@@ -25,10 +25,10 @@ function ItemList(params) {
      */
     function listItems() { 
         let res = [];
-        itemsList.forEach(it => {
+        itemsList.forEach(function(it,i) {
             res.push(<button
-                class={it.tag === selTag?'selBtn':'btn'}
-                onClick={function(){ onButton( it.tag, params.onSelected)}}
+                class={i === selIndex?'selBtn':'btn'}
+                onClick={function(){ onButton( i, params.onSelected)}}
             >{it.tag}
                 </button>)
 

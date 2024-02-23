@@ -5,15 +5,14 @@ import ItemList from './ItemList';
 import item, { getDetailsFromTag } from './items';
 
 function App() {
-  const [contents, setContents] = useState('The description will appear here')
+  const [index, setIndex] = useState(-1)
 
   /**
    * callback when the selected button is changed
    * @param {string} tag the concept name
    */
-  function doSelected(tag) {
-    const dets = getDetailsFromTag(tag);
-    setContents(dets);
+  function doSelected(index) {
+    setIndex(index);
   }
 
   return (
@@ -23,7 +22,7 @@ function App() {
       </header>
       <div id='main'>
         <ItemList onSelected={doSelected}></ItemList>
-        <ItemDetails contents={contents}></ItemDetails>
+        <ItemDetails index={index}></ItemDetails>
 
       </div>
     </div>

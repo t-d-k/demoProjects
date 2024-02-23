@@ -3,11 +3,17 @@ Elegant Black: #000000 - background
 Regal Gold: # ffd700
 Royal Purple: #800080  */
 #detailsDiv {
-
     flex: 0 0 60%;
     background-color: #000000;
     color: #ffd700;
     padding: 0.5em;
     border-radius: 20px;
-
+    display:flex;
+    flex-direction: row;
+}
+.desc{
+    flex: 0 0 80%;
+}
+.price{
+    flex: 0 0 20%;
 }
