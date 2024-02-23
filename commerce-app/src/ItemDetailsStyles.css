@@ -8,12 +8,23 @@ Royal Purple: #800080  */
     color: #ffd700;
     padding: 0.5em;
     border-radius: 20px;
-    display:flex;
+    display: flex;
     flex-direction: row;
+    align-items: center;
 }
-.desc{
-    flex: 0 0 80%;
+
+.desc {
+    flex: 0 0 50%;
 }
-.price{
+
+.price {
     flex: 0 0 20%;
+}
+
+.buy {
+    flex: 0 0 30%;
+    border-radius: 20px;
+    background-color: #ffd700;
+    color: #000000;
+
 }

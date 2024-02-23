@@ -7,17 +7,20 @@ import { itemsList } from './items'
  * @returns details div component
  */
 function ItemDetails(params) {
-    function getDesc(i) {
-
-        // console.log(itemsList[i].details);
-        // return JSON.stringify(itemsList[i].details);
-        return itemsList[i].description;
-
+    function addItem(i){
+        console.log('add itme: '+ i)
+        params.onAdd(i)
     }
+   /**
+    * 
+    * @param {integer} i - index into item list or -1 for no item
+    * @returns item html
+    */
     function getDetails(i) {
         if (i >= 0) {
-            let res = [<span class='desc'>{itemsList[i].description}</span>];
-            res.push(<span class='price'>£{itemsList[i].price}</span>);
+            const res = [<span class='desc'>{itemsList[i].description}</span>];
+            res.push(<span class='price'>{itemsList[i].getPrice()}</span>);
+            res.push(<button class='buy' onClick={function(){addItem(i)}}>Buy</button>);
             return res;            
         } else {
             return <span>Please select an item</span>

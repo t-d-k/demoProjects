@@ -18,5 +18,13 @@ Royal Purple: #800080  */
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #ffd700;
+  align-items: center;
+}
+.header{
+
+  align-items: center;
+}
+h1{
+  flex: 0 0 90%;
 }
 

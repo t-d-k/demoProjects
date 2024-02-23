@@ -5,7 +5,7 @@ import  { itemsList } from './items';
 /**
  * 
  * @param {object} params (onSelected callback)
- * @returns 
+ * @returns component
  */
 function ItemList(params) {
     const [selIndex, setselIndex] = useState('');

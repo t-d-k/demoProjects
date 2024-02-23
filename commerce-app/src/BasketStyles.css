@@ -1,0 +1,12 @@
+/* colour scheme
+Elegant Black: #000000 - background
+Regal Gold: # ffd700
+Royal Purple: #800080  */
+#basket {
+    width: 50px;
+    height: 50px;
+}
+
+#basketDiv {
+    flex: 0 0 10%;
+}

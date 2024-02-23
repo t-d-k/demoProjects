@@ -1,13 +1,31 @@
 /**
- * represents a concept to explain
+ * represents an item to sell
  */
 class item {
+    /**
+     * @constructor
+     * @param {string} tag - quick description of item
+     * @param {string} description - long desc
+     * @param {float} price - price in £
+     */
     constructor(tag, description, price) {
         this.tag = tag;
         this.description = description;
         this.price = price;
     }
+    /**
+     * 
+     * @returns price as a localised string
+     */
+    getPrice() {
+        // add £
+        const formatter = new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: 'GBP',
+        });
+        return formatter.format(this.price);
 
+    }
 }
 /*
  * the data to display 
