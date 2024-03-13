@@ -26,7 +26,7 @@ function ItemList(params) {
     function listItems() { 
         let res = [];
         itemsList.forEach(function(it,i) {
-            res.push(<button
+            res.push(<button 
                 class={i === selIndex?'selBtn':'btn'}
                 onClick={function(){ onButton( i, params.onSelected)}}
             >{it.tag}

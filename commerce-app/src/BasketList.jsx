@@ -10,9 +10,6 @@ import shopBasket from './shopBasket';
  * @returns component
  */
 function BasketList(params) {
-    // const [theBasket, settheBasket] = useState(new shopBasket());
-
-
     return (
         <div id="basketDiv">
             <img id='basket' src={basketIcon} alt="basket" />
